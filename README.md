@@ -37,9 +37,20 @@ cd ../frontend
 npm install
 ```
 
-5. **Jalankan proyek**
+5. **Instal dependensi tambahan**
+```bash
+cd ..
+npm install
+```
 
-Dari _root_ proyek jalankan
+6. **Jalankan proyek**
+
+Jalankan
+```bash
+mongod
+```
+
+Di terminal terpisah, dari _root_ proyek jalankan
 ```bash
 npm start
 ```

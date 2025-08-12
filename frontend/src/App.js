@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     axios.get("/api/hello")
-      .then(res => setMsg(res.data.message))
+      .then(res => setMsg(res.data.pesan))
       .catch(err => console.error(err));
   }, []);
 
