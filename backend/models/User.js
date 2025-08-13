@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true },
-    content: { type: String, required: true }
+    namapengguna: { type: String, required: true },
+    surel: { type: String, required: true/*, unique: true*/ },
+    katasandi: { type: String, required: true }
   },
-  { timestamp : true }
+  { timestamps : true }
 );
 
 const User = mongoose.model("User", userSchema);
-
-module.exports = { User };
+module.exports = User;

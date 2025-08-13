@@ -47,7 +47,7 @@ npm install
 
 Jalankan
 ```bash
-mongod
+mongod --dbpath <sesuaikan dengan alamat ke direktori data>
 ```
 
 Di terminal terpisah, dari _root_ proyek jalankan

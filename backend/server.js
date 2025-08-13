@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes.js");
+const classRoutes = require("./routes/classRoutes.js");
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .catch(err => console.error(err));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/class", classRoutes);
 
 app.get("/api/hello", (req, res) => {
   res.status(200).json({ pesan: "Halo dari backend" });
