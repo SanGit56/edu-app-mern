@@ -2,14 +2,15 @@ const Class = require("../models/Class.js");
 
 const createClass = async (req, res) => {
     try {
-        const { nama, walikelas } = req.body;
+        const { nama, walikelas, murid } = req.body;
         if (!nama) {
             return res.status(400).json({ pesan: "Field nama harus diisi" });
         }
 
         const kelasBaru = new Class({
             nama,
-            walikelas
+            walikelas,
+            murid
         });
 
         await kelasBaru.save();
@@ -49,11 +50,11 @@ const readOneClass = async (req, res) => {
 const updateClass = async (req, res) => {
     try {
         const { id } = req.params;
-        const { nama, walikelas } = req.body;
+        const { nama, walikelas, murid } = req.body;
 
         const kelasApdet = await Class.findByIdAndUpdate(
             id,
-            { nama, walikelas },
+            { nama, walikelas, murid },
             { new: true }
         );
 
