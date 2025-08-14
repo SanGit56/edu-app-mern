@@ -47,7 +47,7 @@ const login = async (req, res) => {
         const token = jwt.sign(
             { id: pengguna._id, surel: pengguna.surel },
             process.env.JWT_SECRET,
-            { expiresIn: '6h' }
+            { expiresIn: '1h' }
         );
 
         res.status(200).json({ pesan: "Silakan masuk", token, userId: pengguna._id });
