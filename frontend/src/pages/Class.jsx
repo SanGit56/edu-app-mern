@@ -131,7 +131,7 @@ const Class = () => {
 };
 
   if (loading) {
-    return <p className="text-center mt-4">Memuat kelas</p>;
+    return <p className="text-center mt-4">Memuat data kelas</p>;
   }
 
   return (
@@ -139,8 +139,8 @@ const Class = () => {
       <nav className="bg-amber-600 text-white p-4 flex justify-between items-center shadow-md">
         <div className="flex gap-4">
           <a href="/class" className="text-amber-200"><b>Kelas</b></a>
-          <a href="/students" className="hover:text-amber-200">Murid</a>
-          <a href="/users" className="hover:text-amber-200">Pengguna</a>
+          <a href="/student" className="hover:text-amber-200">Murid</a>
+          <a href="/user" className="hover:text-amber-200">Pengguna</a>
         </div>
       </nav>
 
@@ -244,7 +244,7 @@ const Class = () => {
 
               <div>
                 <label className="block text-sm font-medium text-amber-700 mb-1">
-                  Wali kelas
+                  Pilih Wali kelas
                 </label>
                 <select
                   value={walikelas}

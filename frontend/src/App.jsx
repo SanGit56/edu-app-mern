@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Class from "./pages/Class";
+import Student from "./pages/Student";
+import User from "./pages/User";
 
 const App = () => {
   const [msg, setMsg] = useState("");
@@ -31,6 +33,22 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Class />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/student" 
+            element={
+              <ProtectedRoute>
+                <Student />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/user" 
+            element={
+              <ProtectedRoute>
+                <User />
               </ProtectedRoute>
             } 
           />
