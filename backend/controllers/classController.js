@@ -1,4 +1,5 @@
 const Class = require("../models/Class.js");
+const Student = require("../models/Student.js");
 
 const createClass = async (req, res) => {
     try {
@@ -61,6 +62,16 @@ const updateClass = async (req, res) => {
         if (!kelasApdet) {
             return res.status(404).json({ pesan: "Kelas tidak ditemukan" });
         }
+
+        await Student.updateMany(
+            { kelas: id, _id: { $nin: murid } },
+            { $unset: { kelas: "" } }
+        );
+
+        await Student.updateMany(
+            { _id: { $in: murid } },
+            { kelas: id }
+        );
 
         res.status(200).json(kelasApdet);
     } catch (error) {

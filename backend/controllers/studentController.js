@@ -1,4 +1,5 @@
 const Student = require("../models/Student.js");
+const Class = require("../models/Class.js");
 
 const createStudent = async (req, res) => {
     try {
@@ -7,12 +8,15 @@ const createStudent = async (req, res) => {
             return res.status(400).json({ pesan: "Field nama harus diisi" });
         }
 
-        const muridBaru = new Student({
-            nama,
-            kelas
-        });
-
+        const muridBaru = new Student({ nama, kelas });
         await muridBaru.save();
+
+        if (kelas) {
+            await Class.findByIdAndUpdate(kelas, {
+                $addToSet: { murid: muridBaru._id }
+            });
+        }
+
         res.status(201).json({ pesan: "Murid telah ditambahkan", StudentId: muridBaru._id });
     } catch (error) {
         console.error(error);

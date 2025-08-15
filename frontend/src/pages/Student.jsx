@@ -75,7 +75,7 @@ const Student = () => {
         <div className="flex gap-4">
           <a href="/class" className="hover:text-amber-200">Kelas</a>
           <a href="/students" className="text-amber-200"><b>Murid</b></a>
-          <a href="/users" className="hover:text-amber-200">Pengguna</a>
+          <a href="/user" className="hover:text-amber-200">Pengguna</a>
         </div>
       </nav>
 
