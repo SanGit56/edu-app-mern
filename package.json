@@ -2,7 +2,7 @@
   "name": "edu-app-mern",
   "private": true,
   "scripts": {
-    "start": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\""
+    "start": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

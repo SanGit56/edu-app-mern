@@ -65,7 +65,7 @@ const updateClass = async (req, res) => {
         res.status(200).json(kelasApdet);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ pesan: "Server error" });
+        res.status(500).json({ pesan: "Gagal menyunting" });
     }
 };
 
